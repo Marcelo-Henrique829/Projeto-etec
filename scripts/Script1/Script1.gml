@@ -6,4 +6,3 @@
 
 //}
 
-show_question("fodasse ?")

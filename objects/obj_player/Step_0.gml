@@ -38,3 +38,44 @@ var _baixo = keyboard_check(ord("S"))
 #endregion
 
 
+#region animação e condições para tal
+
+var _hanim = _direita - _esquerda;
+var _vanim = _baixo - _cima;
+
+switch(anim)
+{
+	case 1:
+		sprite_index = spr_player_frente;
+	break;
+	case 2:
+		sprite_index = spr_plaeyr_lado;
+	break;
+	
+	case 3:
+		sprite_index = spr_player_cima;
+	break;
+	
+	case 4:
+		sprite_index = spr_player_frente;
+	break;
+		
+	
+}
+
+if(_hanim!=0)
+{	
+	image_xscale = sign(_hanim);
+	anim = 2;
+}
+if(_vanim==-1) anim = 3
+if(_vanim==1) anim = 4
+
+
+
+
+
+
+#endregion
+
+show_debug_message(_vanim)

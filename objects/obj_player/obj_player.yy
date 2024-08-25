@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"testeprotas",
-    "path":"sprites/testeprotas/testeprotas.yy",
+    "name":"spr_player_frente",
+    "path":"sprites/spr_player_frente/spr_player_frente.yy",
   },
   "spriteMaskId":null,
   "visible":true,
