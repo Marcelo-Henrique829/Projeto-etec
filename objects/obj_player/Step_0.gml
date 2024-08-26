@@ -49,7 +49,7 @@ switch(anim)
 		sprite_index = spr_player_frente;
 	break;
 	case 2:
-		sprite_index = spr_plaeyr_lado;
+		sprite_index = spr_plaeyr_lado_direito;
 	break;
 	
 	case 3:
@@ -59,15 +59,20 @@ switch(anim)
 	case 4:
 		sprite_index = spr_player_frente;
 	break;
+	case 5:
+		sprite_index = spr_player_lado_esquerdo;
+	break;
 		
 	
 }
 
-if(_hanim!=0)
+if(_hanim==1)
 {	
-	image_xscale = sign(_hanim);
+	//image_xscale = sign(_hanim);
 	anim = 2;
 }
+
+if(_hanim==-1) anim = 5
 if(_vanim==-1) anim = 3
 if(_vanim==1) anim = 4
 
@@ -78,4 +83,6 @@ if(_vanim==1) anim = 4
 
 #endregion
 
-show_debug_message(_vanim)
+
+
+usa_arma(); // essa é para a arma de longo alcance
