@@ -1,0 +1,8 @@
+{
+  "FolderOrderSettings":[
+    {"name":"tiles","order":1,"path":"folders/Sprites/tiles.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"obj_controle","order":1,"path":"objects/obj_controle/obj_controle.yy",},
+  ],
+}
