@@ -6,3 +6,22 @@
 
 //}
 
+function check_dash()
+{
+
+	if dash and can_dash
+	{
+		anim = "dash"
+		dash_timer = dash_timer_initial;
+		hspd = lengthdir_x(dash_spd,move_direction)
+		vspd = lengthdir_y(dash_spd,move_direction)
+		dash_array = []
+	}
+
+}
+
+
+function reset_variaveis()
+{
+	dash = 0
+}

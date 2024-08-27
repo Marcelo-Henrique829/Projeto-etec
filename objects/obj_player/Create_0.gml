@@ -11,6 +11,11 @@ max_spd = 5; //velocidade maxima
 anim = "parado"; //variável de animação
 arma = noone;
 
+//dash
+dash_spd = 5;
+dash_duration = 0;
+dash_cooldown = 0;
+dashing = false
 
 usa_arma = function()
 {

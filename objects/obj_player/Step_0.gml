@@ -3,11 +3,12 @@
 
 
 #region Controles
-
 var _direita =	keyboard_check(ord("D"))
 var _esquerda = keyboard_check(ord("A"))
 var _cima =		keyboard_check(ord("W"))
 var _baixo =	keyboard_check(ord("S"))
+var _dash =	keyboard_check_pressed(vk_space);
+
 
 
 #endregion
@@ -31,7 +32,7 @@ var _baixo =	keyboard_check(ord("S"))
 	else
 	{
 		// desacelerando quando nada estiver pressionado
-		spd = lerp(spd,0,0.1)
+  		spd = lerp(spd,0,0.1)
 	}
 	var _spd = spd / 2
 	
@@ -42,6 +43,21 @@ var _baixo =	keyboard_check(ord("S"))
 
 #endregion
 
+#region dash
+
+dash_cooldown = max(dash_cooldown-1,0)
+
+if(_dash and dash_cooldown == 0)
+{
+	dash_cooldown = 120;
+	spd = 5 * dash_spd
+	dashing = true
+}
+else
+{
+	dashing = false
+}
+#endregion
 
 #region animação e condições para tal
 
@@ -61,14 +77,19 @@ switch(anim)
 	case "movendo_esquerda":
 		sprite_index = spr_player_lado_esquerdo;
 	break;
+	
+	case "dash":
+		image_index = 2
+	break;
 		
 	
 }
  // tô usando o angulo que ele tá olhando para saber qual sprite colocar
-if(move_direction == 0)		anim = "movendo_direita"
-if(move_direction == 180)	anim = "movendo_esquerda";
-if(move_direction == 90)	anim = "movendo_cima"
-if(move_direction == 270)	anim = "movendo_baixo"
+if(move_direction == 0 and dashing == false)		anim = "movendo_direita"
+if(move_direction == 180 and dashing == false)	anim = "movendo_esquerda";
+if(move_direction == 90 and dashing == false)	anim = "movendo_cima"
+if(move_direction == 270 and dashing == false)	anim = "movendo_baixo"
+if(_dash and dashing) anim = "dash"
 
 
 
@@ -76,7 +97,14 @@ if(move_direction == 270)	anim = "movendo_baixo"
 
 #endregion
 
-show_debug_message(move_direction)
+//show_debug_message(move_direction)
 
 usa_arma(); // essa é para a arma de longo alcance
+
+
+
+
+show_debug_message(spd)
+
+
 
