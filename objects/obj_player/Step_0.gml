@@ -4,10 +4,10 @@
 
 #region Controles
 
-var _direita = keyboard_check(ord("D"))
+var _direita =	keyboard_check(ord("D"))
 var _esquerda = keyboard_check(ord("A"))
-var _cima = keyboard_check(ord("W"))
-var _baixo = keyboard_check(ord("S"))
+var _cima =		keyboard_check(ord("W"))
+var _baixo =	keyboard_check(ord("S"))
 
 
 #endregion
@@ -22,7 +22,7 @@ var _baixo = keyboard_check(ord("S"))
 	if(_esquerda or _direita or _cima or _baixo)
 	{
 		//descobrindo para qual direção estou me movendo
-		move_direction = point_direction(0,0,(_direita - _esquerda),(_baixo-_cima))
+		move_direction = point_direction(0,0,_direita -_esquerda,_baixo-_cima)
 	
 		//esquema de aceleração
 		spd = lerp(spd,max_spd,0.1)
@@ -33,49 +33,42 @@ var _baixo = keyboard_check(ord("S"))
 		// desacelerando quando nada estiver pressionado
 		spd = lerp(spd,0,0.1)
 	}
+	var _spd = spd / 2
 	
+	if( (_esquerda & _direita) or (_cima & _baixo) ) spd = lerp(spd,0,0.2)
+ 
+	
+
 
 #endregion
 
 
 #region animação e condições para tal
 
-var _hanim = _direita - _esquerda;
-var _vanim = _baixo - _cima;
-
 switch(anim)
 {
-	case 1:
+	case "movendo_baixo":
 		sprite_index = spr_player_frente;
 	break;
-	case 2:
+	case "movendo_direita":
 		sprite_index = spr_plaeyr_lado_direito;
 	break;
 	
-	case 3:
+	case "movendo_cima":
 		sprite_index = spr_player_cima;
 	break;
 	
-	case 4:
-		sprite_index = spr_player_frente;
-	break;
-	case 5:
+	case "movendo_esquerda":
 		sprite_index = spr_player_lado_esquerdo;
 	break;
 		
 	
 }
-
-if(_hanim==1)
-{	
-	//image_xscale = sign(_hanim);
-	anim = 2;
-}
-
-if(_hanim==-1) anim = 5
-if(_vanim==-1) anim = 3
-if(_vanim==1) anim = 4
-
+ // tô usando o angulo que ele tá olhando para saber qual sprite colocar
+if(move_direction == 0)		anim = "movendo_direita"
+if(move_direction == 180)	anim = "movendo_esquerda";
+if(move_direction == 90)	anim = "movendo_cima"
+if(move_direction == 270)	anim = "movendo_baixo"
 
 
 
@@ -83,6 +76,7 @@ if(_vanim==1) anim = 4
 
 #endregion
 
-
+show_debug_message(move_direction)
 
 usa_arma(); // essa é para a arma de longo alcance
+

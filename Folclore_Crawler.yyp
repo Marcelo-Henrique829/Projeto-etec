@@ -40,6 +40,7 @@
   "name":"Folclore_Crawler",
   "resources":[
     {"id":{"name":"obj_arma_longe","path":"objects/obj_arma_longe/obj_arma_longe.yy",},},
+    {"id":{"name":"obj_controle","path":"objects/obj_controle/obj_controle.yy",},},
     {"id":{"name":"obj_parede","path":"objects/obj_parede/obj_parede.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_tiro","path":"objects/obj_tiro/obj_tiro.yy",},},
@@ -51,6 +52,7 @@
     {"id":{"name":"spr_parede","path":"sprites/spr_parede/spr_parede.yy",},},
     {"id":{"name":"spr_plaeyr_lado_direito","path":"sprites/spr_plaeyr_lado_direito/spr_plaeyr_lado_direito.yy",},},
     {"id":{"name":"spr_player_cima","path":"sprites/spr_player_cima/spr_player_cima.yy",},},
+    {"id":{"name":"spr_player_dash","path":"sprites/spr_player_dash/spr_player_dash.yy",},},
     {"id":{"name":"spr_player_frente","path":"sprites/spr_player_frente/spr_player_frente.yy",},},
     {"id":{"name":"spr_player_lado_esquerdo","path":"sprites/spr_player_lado_esquerdo/spr_player_lado_esquerdo.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
