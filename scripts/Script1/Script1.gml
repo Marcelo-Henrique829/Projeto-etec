@@ -20,8 +20,3 @@ function check_dash()
 
 }
 
-
-function reset_variaveis()
-{
-	dash = 0
-}

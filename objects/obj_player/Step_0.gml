@@ -49,7 +49,7 @@ dash_cooldown = max(dash_cooldown-1,0)
 
 if(_dash and dash_cooldown == 0)
 {
-	dash_cooldown = 120;
+	dash_cooldown = 60;
 	spd = 5 * dash_spd
 	dashing = true
 }
@@ -79,7 +79,7 @@ switch(anim)
 	break;
 	
 	case "dash":
-		image_index = 2
+		image_index = 2;
 	break;
 		
 	

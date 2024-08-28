@@ -1,6 +1,9 @@
 /// @description Iniciando Variáveis
 
 
+image_xscale = .5
+image_yscale = .5
+
 hspd=0; //velocidade horizontal
 vspd=0; //velocidade vertical
 spd = 0;//velocidade
@@ -17,7 +20,7 @@ dash_duration = 0;
 dash_cooldown = 0;
 dashing = false
 
-usa_arma = function()
+usa_arma = function() 
 {
 	var _atirar = mouse_check_button_pressed(mb_left)
 
