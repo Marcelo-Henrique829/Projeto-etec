@@ -1,21 +1,23 @@
 /// @description Iniciando Variáveis
 
 
-image_xscale = .5
-image_yscale = .5
+image_xscale = .4
+image_yscale = .4
 
+
+vida = 2
 hspd=0; //velocidade horizontal
 vspd=0; //velocidade vertical
 spd = 0;//velocidade
 
 move_direction = 0;//direção do movimento
-max_spd = 5; //velocidade maxima
+max_spd = 3; //velocidade maxima
 
 anim = "parado"; //variável de animação
 arma = noone;
 
 //dash
-dash_spd = 5;
+dash_spd = 2;
 dash_duration = 0;
 dash_cooldown = 0;
 dashing = false

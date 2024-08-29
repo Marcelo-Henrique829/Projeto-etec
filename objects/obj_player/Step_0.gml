@@ -101,10 +101,8 @@ if(_dash and dashing) anim = "dash"
 
 usa_arma(); // essa é para a arma de longo alcance
 
+depth = -bbox_bottom;
 
-
-
-show_debug_message(spd)
 
 
 
